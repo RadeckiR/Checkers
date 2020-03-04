@@ -1,0 +1,17 @@
+﻿  damka.cpp
+  pionek.cpp
+C:\Users\chujcieto\source\warcaby\damka.h(2,10): fatal error C1083: Nie można otworzyć pliku dołącz: 'SFML/Graphics.hpp': No such file or directory
+  PionekBlack.cpp
+C:\Users\chujcieto\source\warcaby\pionek.h(2,10): fatal error C1083: Nie można otworzyć pliku dołącz: 'SFML/Graphics.hpp': No such file or directory
+  PionekWhite.cpp
+C:\Users\chujcieto\source\warcaby\pionek.h(2,10): fatal error C1083: Nie można otworzyć pliku dołącz: 'SFML/Graphics.hpp': No such file or directory
+  plansza.cpp
+C:\Users\chujcieto\source\warcaby\pionek.h(2,10): fatal error C1083: Nie można otworzyć pliku dołącz: 'SFML/Graphics.hpp': No such file or directory
+  pole.cpp
+C:\Users\chujcieto\source\warcaby\plansza.h(2,10): fatal error C1083: Nie można otworzyć pliku dołącz: 'SFML/Graphics.hpp': No such file or directory
+  ruch.cpp
+C:\Users\chujcieto\source\warcaby\pole.h(2,10): fatal error C1083: Nie można otworzyć pliku dołącz: 'SFML/Graphics.hpp': No such file or directory
+  warcaby.cpp
+C:\Users\chujcieto\source\warcaby\ruch.h(2,10): fatal error C1083: Nie można otworzyć pliku dołącz: 'SFML/Graphics.hpp': No such file or directory
+  Generowanie kodu...
+C:\Users\chujcieto\source\warcaby\warcaby.cpp(3,10): fatal error C1083: Nie można otworzyć pliku dołącz: 'SFML/Graphics.hpp': No such file or directory
