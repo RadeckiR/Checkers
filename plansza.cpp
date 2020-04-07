@@ -8,26 +8,16 @@
 #include <vector> 
 #include <string>
 
-//
-//void pole::draw(sf::RenderTarget& target, sf::RenderStates state) const // nie bedzie zmieniac zadnych pol naszej klasy
-//{
-//	target.draw(this->rshape, state);
-//}
+
 
 void plansza::createwindow() {
-	
-	window.setFramerateLimit(10);
-	
+	window.setFramerateLimit(5);
 	board.loadFromFile("plansza.JPG");
-	
 	boardSprite.setTexture(board);
 }
 
 
 void plansza::createplansza() {
-	
-	
-
 	for (int i = 0; i < 8; i++)
 	{
 		if (i % 2 == 0) {
@@ -50,8 +40,6 @@ void plansza::createplansza() {
 
 
 void plansza::ustawpionki() {
-	
-
 	for (int i = 0; i < 32; i++)
 	{
 		if (i < 12) {
@@ -83,9 +71,6 @@ void plansza::whilee(){
 		window.pollEvent(event); // do obslugi okienka wyskakujacego (zamnkiecie, minimalizacja)
 		window.draw(boardSprite);
 
-		// window.draw(pole1);
-		// window.draw(k);
-
 		for (int i = 0; i < 32; i++)
 		{
 			if (tab[i].getState() == 2) {
@@ -108,14 +93,13 @@ void plansza::whilee(){
 		}
 
 
-
 		for (int i = 0; i < 32; i++)
 		{
 			switch (event.type)
 			{
 			case Event::Closed:
 			{
-				//window.close();
+				window.close();
 				break;
 			}
 			case Event::MouseButtonPressed:
@@ -137,7 +121,7 @@ void plansza::whilee(){
 							Ruchy.addPossibilityBlack(i, tab);
 							cout << endl << "ruch: Czarny";
 							notup = 0;
-							numberPionek = tab[i].getPionek(); // zczytujemy do zmiennej numer  pionka podniesionego
+							numberPionek = tab[i].getPionek(); //zczytujemy do zmiennej numer  pionka podniesionego
 							tab[i].setState(0);
 							tab[i].setPionek(-1);
 							break;
@@ -150,7 +134,7 @@ void plansza::whilee(){
 							numberPionek = tab[i].getPionek();
 							tab[i].setState(0);
 							tab[i].setPionek(-1);
-							break;
+							break; 
 						}
 						else if (turn == false && tab[i].getState() == 4) {
 							color = tab[i].getState();
@@ -169,12 +153,12 @@ void plansza::whilee(){
 					if (tab[i].poleCheck((float)event.mouseButton.x, (float)event.mouseButton.y) == true) {
 						if (color == 1 && tab[i].getState() == 0 && Ruchy.checkPossibility(i, tab, color) == true) {
 							tab[i].setState(1);
-							if (numberPionek == -1) { throw std::logic_error ("b³¹d przypisania pionka podniesionego"); }
+							if (numberPionek == -1) { cout << "b³¹d przypisania pionka podniesionego"; break; }
 							tab[i].setPionek(numberPionek);
 							pionekWhite[numberPionek].setPos(tab[i].poleX(), tab[i].poleY()); // setPos
 							pionekWhite[numberPionek].setCol(Color::White);
 							notup = 1;
-							if (Ruchy.getMovements() >= 2) { cout << "pionek zbity.";   Ruchy.CheckPossibilityTwoWhite(i, tab); };
+							if (Ruchy.getMovements() >= 2) { cout << "pionek zbity. wykonaj kolejne bicie.";   Ruchy.CheckPossibilityTwoWhite(i, tab); };
 							if (Ruchy.getFlag() == false) turn = true;
 							else {
 								if (Damka.damkaCheck(i, color, tab) == true)
@@ -184,7 +168,7 @@ void plansza::whilee(){
 						}
 						else if (color == 2 && tab[i].getState() == 0 && Ruchy.checkPossibility(i, tab, color) == true) {
 							tab[i].setState(2);
-							if (numberPionek == -1) { throw std::logic_error("b³¹d przypisania pionka podniesionego"); }
+							if (numberPionek == -1) { cout << "b³¹d przypisania pionka podniesionego"; break; }
 							tab[i].setPionek(numberPionek);
 							pionekBlack[numberPionek].setPos(tab[i].poleX(), tab[i].poleY()); // setPos
 							pionekBlack[numberPionek].setCol(Color::Black);
@@ -199,7 +183,7 @@ void plansza::whilee(){
 						}
 						else if (color == 3 && tab[i].getState() == 0 && Damka.checkPossibilityDamka(i, color, tab) == true) {
 							tab[i].setState(3);
-							if (numberPionek == -1) { throw std::logic_error("b³¹d przypisania pionka podniesionego"); }
+							if (numberPionek == -1) { cout << "b³¹d przypisania pionka podniesionego"; break; }
 							tab[i].setPionek(numberPionek);
 							pionekWhite[numberPionek].setPos(tab[i].poleX(), tab[i].poleY()); // setPos
 							pionekWhite[numberPionek].setCol(Color::Yellow);
@@ -209,7 +193,7 @@ void plansza::whilee(){
 						}
 						else if (color == 4 && tab[i].getState() == 0 && Damka.checkPossibilityDamka(i, color, tab) == true) {
 							tab[i].setState(4);
-							if (numberPionek == -1) { throw std::logic_error("b³¹d przypisania pionka podniesionego"); }
+							if (numberPionek == -1) { cout << "b³¹d przypisania pionka podniesionego"; break; }
 							tab[i].setPionek(numberPionek);
 							pionekBlack[numberPionek].setPos(tab[i].poleX(), tab[i].poleY()); // setPos
 							pionekBlack[numberPionek].setCol(Color::Blue);
@@ -225,14 +209,14 @@ void plansza::whilee(){
 			default: break;
 			}
 		}
-		
+
 		fstream plik;
 		int a;
 
 		if (Remaining_White.size() == 0 && notup == 1 && turn == true) {
 			plik.open("wyniki.txt", std::ios_base::app);
 			cout << endl << "KONIEC GRY! zwycieza gracz Czarny, ilosc pozostalych pionkow wynosi " << Remaining_Black.size() << "." << endl;
-			plik << " zwyciezca: Gracz Czarny, iloscia " << Remaining_Black.size() << "pionkow." << "mecz odbyl sie: "; //<< dt;
+			plik << " zwyciezca: Gracz Czarny, iloscia " << Remaining_Black.size() << "pionkow." << "mecz odbyl sie: ";//<< dt;
 			plik.close();
 
 			window.close();
@@ -244,7 +228,7 @@ void plansza::whilee(){
 		if (Remaining_Black.size() == 0 && notup == 1 && turn == false) {
 			plik.open("wyniki.txt", std::ios_base::app);
 			cout << endl << "KONIEC GRY! zwycieza gracz Bialy, ilosc pozostalych pionkow wynosi " << Remaining_White.size() << "." << endl;
-			plik << " zwyciezca: Gracz Bialy, iloscia " << Remaining_White.size() << "pionkow. " << "mecz odbyl sie: "; // << dt;
+			plik << " zwyciezca: Gracz Bialy, iloscia " << Remaining_White.size() << "pionkow. " << "mecz odbyl sie: ";// << dt;
 			plik.close();
 			window.close();
 
@@ -256,7 +240,7 @@ void plansza::whilee(){
 				infile.open("wyniki.txt");
 				while (!infile.eof()) 
 				{
-					getline(infile, STRING);
+					getline(infile, STRING); 
 					cout << STRING << endl; 
 				}
 				infile.close();
@@ -272,19 +256,5 @@ void plansza::whilee(){
 		
 		window.display(); // do wyswietlania obiektow
 		window.clear();
-
-		/*while (oknoAplikacji.pollEvent(zdarzenie))
-		{
-			if (zdarzenie.type == sf::Event::Closed)
-				oknoAplikacji.close();
-
-			if (zdarzenie.type == sf::Event::KeyPressed && zdarzenie.key.code == sf::Keyboard::Escape)
-				oknoAplikacji.close();
-
-			if (zdarzenie.type == sf::Event::MouseButtonPressed && zdarzenie.mouseButton.button == sf::Mouse::Middle)
-				oknoAplikacji.close();
-
-		}*/
-
 	} 
 }

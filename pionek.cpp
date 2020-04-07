@@ -16,13 +16,8 @@ void pionek::draw(sf::RenderTarget& target, sf::RenderStates state) const // nie
 	target.draw(this->shape, state);
 }
 
-void pionek::setCol(sf::Color col)
+void pionek::setCol(sf::Color col) 
 {
 	shape.setFillColor(col);
 }
-
-//sf::Color pionek::getCol() 
-//{
-//	return shape.getFillColor();
-//}
 

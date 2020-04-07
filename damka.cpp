@@ -48,6 +48,8 @@ void damka::addPossibilityDamkaWhite(int i, pole* tab)
 			numerator++;
 			I_change_l(even_odd);
 			even_odd++;
+			//if ((tab[i + l].getState() == 2 || tab[i + l].getState() == 4) && check == 0) { ruchydamka[1][numerator] = i + l; I_change_l(even_odd); even_odd++; check = 1; }
+			// if (tab[i + l].getState() == 1 || tab[i + l].getState() == 3) break;
 		}
 		check = 0;
 		even_odd = 1;
@@ -63,6 +65,8 @@ void damka::addPossibilityDamkaWhite(int i, pole* tab)
 			numerator++;
 			II_change_l(even_odd);
 			even_odd++;
+			// if ((tab[i + l].getState() == 2 || tab[i + l].getState() == 4) && check == 0) { ruchydamka[2][numerator] = i + l; II_change_l(even_odd); even_odd++; check = 1; }
+			// if (tab[i + l].getState() == 1 || tab[i + l].getState() == 3) break;
 		}
 		return;
 	}
@@ -84,6 +88,7 @@ void damka::addPossibilityDamkaWhite(int i, pole* tab)
 			numerator++;
 			I_change_l(even_odd);
 			even_odd++;
+			//if ((tab[i + l].getState() == 2 || tab[i + l].getState() == 4) && check == 0) { ruchydamka[1][numerator] = i + l; I_change_l(even_odd); even_odd++; check = 1; }
 		}
 		check = 0;
 		even_odd = 1;
@@ -99,6 +104,7 @@ void damka::addPossibilityDamkaWhite(int i, pole* tab)
 			numerator++;
 			II_change_l(even_odd);
 			even_odd++;
+			// if ((tab[i + l].getState() == 2 || tab[i + l].getState() == 4) && check == 0) { ruchydamka[2][numerator] = i + l; II_change_l(even_odd); even_odd++; check = 1; }
 		}
 		check = 0;
 		even_odd = 0;
@@ -154,6 +160,8 @@ void damka::addPossibilityDamkaWhite(int i, pole* tab)
 			numerator++;
 			II_change_l(even_odd);
 			even_odd++;
+			// if ((tab[i + l].getState() == 2 || tab[i + l].getState() == 4) && check == 0) { ruchydamka[2][numerator] = i + l; II_change_l(even_odd); even_odd++; check = 1; }
+			// if (tab[i + l].getState() == 1 || tab[i + l].getState() == 3) break;
 		}
 		return;
 	}
@@ -173,6 +181,8 @@ void damka::addPossibilityDamkaWhite(int i, pole* tab)
 			numerator++;
 			I_change_l(even_odd);
 			even_odd++;
+			//if ((tab[i + l].getState() == 2 || tab[i + l].getState() == 4) && check == 0) { ruchydamka[1][numerator] = i + l; I_change_l(even_odd); even_odd++; check = 1; }
+			// if (tab[i + l].getState() == 1 || tab[i + l].getState() == 3) break;
 		}
 		return;
 	}
@@ -195,6 +205,8 @@ void damka::addPossibilityDamkaWhite(int i, pole* tab)
 			numerator++;
 			II_change_l(even_odd);
 			even_odd++;
+			// if ((tab[i + l].getState() == 2 || tab[i + l].getState() == 4) && check == 0) { ruchydamka[2][numerator] = i + l; II_change_l(even_odd); even_odd++; check = 1; }
+			// if (tab[i + l].getState() == 1 || tab[i + l].getState() == 3) break;
 		}
 		check = 0;
 		even_odd = 0;
@@ -231,6 +243,8 @@ void damka::addPossibilityDamkaWhite(int i, pole* tab)
 			numerator++;
 			I_change_l(even_odd);
 			even_odd++;
+			//if ((tab[i + l].getState() == 2 || tab[i + l].getState() == 4) && check == 0) { ruchydamka[1][numerator] = i + l; I_change_l(even_odd); even_odd++; check = 1; }
+			// if (tab[i + l].getState() == 1 || tab[i + l].getState() == 3) break;
 		}
 		check = 0;
 		even_odd = 0;

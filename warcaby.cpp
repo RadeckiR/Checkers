@@ -7,7 +7,7 @@
 #include "ruch.h"
 #include "damka.h"
 #include "plansza.h"
-
+#include <sstream>
 #include <fstream>
 #include <ctime>
 #include <vector> 
@@ -23,17 +23,6 @@ int main()
 	Plansza.createwindow();
 	Plansza.createplansza();
 	Plansza.ustawpionki();
-	try
-	{
-		Plansza.whilee();
-	}
-	catch (logic_error & e) {
-		cout << e.what() << endl;
-			cout << "sprobuj jeszcze raz kliknac na wybrany pionek" << endl;
-		Plansza.whilee();
-	}
-	
+	Plansza.whilee();
 	return 0;
 }
-
-
